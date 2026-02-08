@@ -37,13 +37,14 @@
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: white;
+        background-color: rgba(26, 32, 44, 0.98);
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
         padding: 40px 0;
         gap: 30px;
+        border-top: 1px solid #4a5568;
     }
     
     .nav-menu.active {
