@@ -1,0 +1,199 @@
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 30px;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .about-text h1 {
+        font-size: 3rem;
+    }
+    
+    .expertise-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+    
+    .experience-item {
+        grid-template-columns: 150px 1fr;
+        gap: 30px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 40px 0;
+        gap: 30px;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-buttons {
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    
+    .about-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-text h2 {
+        font-size: 1.3rem;
+    }
+    
+    .about-description {
+        font-size: 1rem;
+    }
+    
+    .about-details {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .about-image img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .expertise-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .expertise-category {
+        padding: 30px;
+    }
+    
+    .experience-item {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .experience-date {
+        font-size: 0.8rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .project-content {
+        padding: 25px;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .nav-container {
+        padding: 0 20px;
+    }
+    
+    .about-text h1 {
+        font-size: 2rem;
+    }
+    
+    .about-text h2 {
+        font-size: 1.1rem;
+    }
+    
+    .about-image img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .expertise-category {
+        padding: 25px;
+    }
+    
+    .project-content {
+        padding: 20px;
+    }
+    
+    .nav-buttons {
+        gap: 10px;
+    }
+    
+    .nav-btn {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .resume-btn {
+        padding: 0 12px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .about-text h1 {
+        font-size: 4rem;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+    }
+}
