@@ -5,7 +5,7 @@ Add your images here:
 - project3.jpg (screenshot of your third project)
 
 Recommended image sizes:
-- Profile photo: 300x300px (square)
+- Profile photo: 400x600px (square)
 - Project images: 600x400px (landscape)
 
 Optimize images for web (use WebP format if possible)
