@@ -69,6 +69,11 @@
                                     My Resume
                                 </a></span>
                         </div>
+                        <div class="detail-item">
+                            <button id="playVideoBtn" class="nav-btn resume-btn play-btn">
+                                <i class="fas fa-play"></i> Play Video
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -209,6 +214,16 @@
             </div>
         </div>
     </section>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="video-modal-close">&times;</span>
+            <video id="modalVideo" controls>
+                <source src="assets/landing.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
 </body>

@@ -116,4 +116,43 @@ window.addEventListener('scroll', revealOnScroll);
 document.addEventListener('DOMContentLoaded', () => {
     // Add any initialization code here
     console.log('Portfolio loaded successfully');
+    
+    // Video Modal Functionality
+    const playVideoBtn = document.getElementById('playVideoBtn');
+    const videoModal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const closeModal = document.querySelector('.video-modal-close');
+
+    if (playVideoBtn && videoModal && modalVideo && closeModal) {
+        // Open video modal
+        playVideoBtn.addEventListener('click', () => {
+            videoModal.classList.add('show');
+            modalVideo.play();
+        });
+
+        // Close video modal
+        closeModal.addEventListener('click', () => {
+            videoModal.classList.remove('show');
+            modalVideo.pause();
+            modalVideo.currentTime = 0;
+        });
+
+        // Close modal when clicking outside the video
+        videoModal.addEventListener('click', (e) => {
+            if (e.target === videoModal) {
+                videoModal.classList.remove('show');
+                modalVideo.pause();
+                modalVideo.currentTime = 0;
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && videoModal.classList.contains('show')) {
+                videoModal.classList.remove('show');
+                modalVideo.pause();
+                modalVideo.currentTime = 0;
+            }
+        });
+    }
 });
