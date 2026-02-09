@@ -8,13 +8,8 @@
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
-    color: #e2e8f0;
-    background-color: #1a202c;
-    background-image: 
-        radial-gradient(circle at 25px 25px, rgba(99, 179, 237, 0.08) 2px, transparent 0),
-        radial-gradient(circle at 75px 75px, rgba(99, 179, 237, 0.05) 1px, transparent 0);
-    background-size: 100px 100px;
-    background-attachment: fixed;
+    color: #333333;
+    background-color: #ffffff;
 }
 
 html {
@@ -36,7 +31,7 @@ html {
     font-weight: 600;
     text-align: center;
     margin-bottom: 60px;
-    color: #f7fafc;
+    color: #1a202c;
 }
 
 /* Navigation */
@@ -313,19 +308,8 @@ html {
 
 /* About Me Section */
 #about-me {
-    background: linear-gradient(135deg, #3a4556 0%, #2d3748 50%, #1f2937 100%);
+    background: #ffffff;
     position: relative;
-}
-
-#about-me::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.03);
-    pointer-events: none;
 }
 
 #about-me .container {
@@ -353,7 +337,7 @@ html {
 .about-me-text p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #cbd5e0;
+    color: #4a5568;
     margin-bottom: 20px;
 }
 
@@ -365,19 +349,19 @@ html {
     display: flex;
     gap: 20px;
     align-items: center;
-    background: rgba(58, 69, 86, 0.5);
+    background: #f7fafc;
     padding: 30px;
     border-radius: 12px;
-    border: 1px solid rgba(99, 179, 237, 0.25);
+    border: 1px solid #e2e8f0;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .education-info:hover {
     border-color: #63b3ed;
-    background: rgba(58, 69, 86, 0.7);
+    background: #ffffff;
     transform: translateX(5px);
-    box-shadow: 0 8px 30px rgba(99, 179, 237, 0.15);
+    box-shadow: 0 4px 20px rgba(99, 179, 237, 0.15);
 }
 
 .education-icon {
@@ -406,13 +390,13 @@ html {
 .education-details h4 {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #f7fafc;
+    color: #1a202c;
     margin-bottom: 8px;
 }
 
 .education-location {
     font-size: 1rem;
-    color: #a0aec0;
+    color: #718096;
     margin-bottom: 5px;
 }
 
@@ -496,7 +480,7 @@ html {
 
 /* Expertise Section */
 #expertise {
-    background: #1a202c;
+    background: #ffffff;
     position: relative;
 }
 
@@ -509,12 +493,12 @@ html {
 }
 
 .expertise-category {
-    background: linear-gradient(135deg, rgba(45, 55, 72, 0.8), rgba(26, 32, 44, 0.9));
+    background: #ffffff;
     padding: 40px 30px;
     border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     transition: all 0.4s ease;
-    border: 1px solid rgba(99, 179, 237, 0.2);
+    border: 1px solid #e2e8f0;
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -537,9 +521,9 @@ html {
 
 .expertise-category:hover {
     transform: translateY(-12px) scale(1.03);
-    box-shadow: 0 20px 50px rgba(99, 179, 237, 0.3);
+    box-shadow: 0 10px 30px rgba(99, 179, 237, 0.2);
     border-color: #63b3ed;
-    background: linear-gradient(135deg, rgba(99, 179, 237, 0.15), rgba(66, 153, 225, 0.1));
+    background: #f7fafc;
 }
 
 .expertise-icon {
@@ -569,7 +553,7 @@ html {
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 25px;
-    color: #f7fafc;
+    color: #1a202c;
     position: relative;
 }
 
@@ -590,8 +574,8 @@ html {
 
 .expertise-category li {
     padding: 12px 0;
-    color: #cbd5e0;
-    border-bottom: 1px solid rgba(74, 85, 104, 0.5);
+    color: #4a5568;
+    border-bottom: 1px solid #e2e8f0;
     transition: all 0.3s ease;
     position: relative;
     padding-left: 20px;
@@ -628,7 +612,7 @@ html {
 .tech-stack-title {
     font-size: 2rem;
     font-weight: 600;
-    color: #f7fafc;
+    color: #1a202c;
     margin-bottom: 50px;
     position: relative;
 }
@@ -652,24 +636,24 @@ html {
 }
 
 .tech-icon {
-    background: rgba(45, 55, 72, 0.6);
+    background: #ffffff;
     backdrop-filter: blur(10px);
     padding: 25px 20px;
     border-radius: 12px;
-    border: 1px solid rgba(99, 179, 237, 0.2);
+    border: 1px solid #e2e8f0;
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .tech-icon:hover {
     transform: translateY(-8px);
     border-color: #63b3ed;
-    background: rgba(99, 179, 237, 0.15);
-    box-shadow: 0 8px 25px rgba(99, 179, 237, 0.3);
+    background: #f7fafc;
+    box-shadow: 0 4px 20px rgba(99, 179, 237, 0.2);
 }
 
 .tech-icon i {
@@ -686,12 +670,12 @@ html {
 .tech-icon span {
     font-size: 0.95rem;
     font-weight: 500;
-    color: #cbd5e0;
+    color: #4a5568;
     transition: color 0.3s ease;
 }
 
 .tech-icon:hover span {
-    color: #f7fafc;
+    color: #1a202c;
 }
 
 /* Experience Section */
@@ -706,14 +690,14 @@ html {
     gap: 40px;
     margin-bottom: 50px;
     padding-bottom: 50px;
-    border-bottom: 1px solid #4a5568;
+    border-bottom: 1px solid #e2e8f0;
     transition: all 0.3s ease;
     padding: 20px;
     border-radius: 8px;
 }
 
 .experience-item:hover {
-    background: rgba(99, 179, 237, 0.05);
+    background: #f7fafc;
     transform: translateX(10px);
 }
 
@@ -735,24 +719,24 @@ html {
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 5px;
-    color: #f7fafc;
+    color: #1a202c;
 }
 
 .experience-content h4 {
     font-size: 1.1rem;
     font-weight: 500;
-    color: #a0aec0;
+    color: #718096;
     margin-bottom: 15px;
 }
 
 .experience-content p {
-    color: #cbd5e0;
+    color: #4a5568;
     line-height: 1.7;
 }
 
 /* Projects Section */
 #projects {
-    background: #2d3748;
+    background: #ffffff;
 }
 
 .projects-grid {
@@ -762,12 +746,12 @@ html {
 }
 
 .project-card {
-    background: #1a202c;
+    background: #ffffff;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
-    border: 1px solid #4a5568;
+    border: 1px solid #e2e8f0;
     position: relative;
 }
 
@@ -791,7 +775,7 @@ html {
 
 .project-card:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 50px rgba(99, 179, 237, 0.2);
+    box-shadow: 0 10px 30px rgba(99, 179, 237, 0.15);
     border-color: #63b3ed;
 }
 
@@ -823,11 +807,11 @@ html {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 15px;
-    color: #f7fafc;
+    color: #1a202c;
 }
 
 .project-content p {
-    color: #cbd5e0;
+    color: #4a5568;
     line-height: 1.6;
     margin-bottom: 20px;
 }
@@ -840,8 +824,8 @@ html {
 }
 
 .project-tech span {
-    background: #4a5568;
-    color: #e2e8f0;
+    background: #e2e8f0;
+    color: #1a202c;
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -968,139 +952,9 @@ a:active {
         page-break-inside: avoid;
         margin-bottom: 20px;
     }
-}/* Tech-i
-nspired background patterns */
+}/* About Section - Keep video background */
 #about {
     position: relative;
-}
-
-#about::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        linear-gradient(90deg, rgba(99, 179, 237, 0.03) 1px, transparent 1px),
-        linear-gradient(rgba(99, 179, 237, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
-    pointer-events: none;
-    z-index: -1;
-}
-
-#expertise::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 20% 50%, rgba(99, 179, 237, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(129, 140, 248, 0.04) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(167, 139, 250, 0.04) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 0;
-}
-
-#expertise .container {
-    position: relative;
-    z-index: 1;
-}
-
-#experience {
-    position: relative;
-}
-
-#experience::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 2px,
-            rgba(99, 179, 237, 0.02) 2px,
-            rgba(99, 179, 237, 0.02) 4px
-        );
-    pointer-events: none;
-    z-index: 0;
-}
-
-#experience .container {
-    position: relative;
-    z-index: 1;
-}
-
-#projects::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        linear-gradient(45deg, rgba(99, 179, 237, 0.02) 25%, transparent 25%),
-        linear-gradient(-45deg, rgba(99, 179, 237, 0.02) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, rgba(99, 179, 237, 0.02) 75%),
-        linear-gradient(-45deg, transparent 75%, rgba(99, 179, 237, 0.02) 75%);
-    background-size: 60px 60px;
-    background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
-    pointer-events: none;
-    z-index: 0;
-}
-
-#projects .container {
-    position: relative;
-    z-index: 1;
-}
-
-/* Animated navbar shimmer */
-.navbar::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(90deg, transparent 0%, rgba(99, 179, 237, 0.03) 50%, transparent 100%);
-    animation: shimmer 8s ease-in-out infinite;
-    pointer-events: none;
-}
-
-@keyframes shimmer {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 1; }
-}
-
-/* Code-like decorative elements */
-.about-text::before {
-    position: absolute;
-    top: -30px;
-    left: 0;
-    font-family: 'Courier New', monospace;
-    font-size: 0.8rem;
-    color: rgba(99, 179, 237, 0.4);
-    font-weight: normal;
-}
-
-.about-text {
-    position: relative;
-}
-
-/* Section title decorations */
-.section-title::after {
-    display: block;
-    font-family: 'Courier New', monospace;
-    font-size: 1rem;
-    color: rgba(99, 179, 237, 0.3);
-    margin-top: 10px;
-    font-weight: normal;
 }
 
 /* Enhanced button hover effects */
@@ -1111,34 +965,6 @@ nspired background patterns */
 
 .hamburger:hover {
     transform: scale(1.1);
-}
-
-/* Glowing effect for interactive elements */
-.nav-btn:hover,
-.project-links a:hover,
-.expertise-category:hover {
-    box-shadow: 0 0 20px rgba(99, 179, 237, 0.3);
-}
-
-/* Pulse animation for important buttons */
-.resume-btn {
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(99, 179, 237, 0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(99, 179, 237, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(99, 179, 237, 0);
-    }
-}
-
-.resume-btn:hover {
-    animation: none;
 }/* C
 omprehensive removal of all click/focus effects */
 * {
