@@ -156,6 +156,29 @@ html {
     border-color: rgba(255, 255, 255, 0.8);
 }
 
+.nav-signature {
+    font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-left: 15px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo:hover .nav-signature {
+    color: #63b3ed;
+    text-shadow: 2px 2px 12px rgba(99, 179, 237, 0.6);
+    transform: translateX(5px);
+}
+
 .nav-menu {
     display: flex;
     align-items: center;
