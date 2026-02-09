@@ -313,12 +313,25 @@ html {
 
 /* About Me Section */
 #about-me {
-    background: #2d3748;
+    background: linear-gradient(135deg, #3a4556 0%, #2d3748 50%, #1f2937 100%);
     position: relative;
+}
+
+#about-me::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.03);
+    pointer-events: none;
 }
 
 #about-me .container {
     padding-right: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .about-me-content {
@@ -352,17 +365,19 @@ html {
     display: flex;
     gap: 20px;
     align-items: center;
-    background: rgba(26, 32, 44, 0.6);
+    background: rgba(58, 69, 86, 0.5);
     padding: 30px;
     border-radius: 12px;
-    border: 1px solid rgba(99, 179, 237, 0.2);
+    border: 1px solid rgba(99, 179, 237, 0.25);
     transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .education-info:hover {
     border-color: #63b3ed;
-    background: rgba(99, 179, 237, 0.1);
+    background: rgba(58, 69, 86, 0.7);
     transform: translateX(5px);
+    box-shadow: 0 8px 30px rgba(99, 179, 237, 0.15);
 }
 
 .education-icon {
