@@ -3,6 +3,7 @@ Add your images here:
 - project1.jpg (screenshot of your first project)
 - project2.jpg (screenshot of your second project)
 - project3.jpg (screenshot of your third project)
+- project4.jpg (screenshot of your fourth project)
 
 Recommended image sizes:
 - Profile photo: 400x600px (square)
