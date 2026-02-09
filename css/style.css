@@ -54,9 +54,9 @@ html {
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 1vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -64,16 +64,49 @@ html {
 }
 
 .nav-logo a {
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: #f7fafc;
+    color: #ffffff;
     text-decoration: none;
-    transition: color 0.3s ease;
+    background: transparent;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-logo a::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
 }
 
 .nav-logo a:hover {
-    color: #63b3ed;
-    transform: scale(1.05);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.8);
 }
 
 .nav-menu {
