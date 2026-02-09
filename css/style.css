@@ -954,18 +954,23 @@ html {
 }
 
 .timeline-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), padding 0.6s ease, margin 0.6s ease, opacity 0.6s ease;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.6s cubic-bezier(0.4, 0, 0.2, 1), padding 0.6s ease, margin 0.6s ease, opacity 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
     background: rgba(30, 41, 59, 0.5);
     backdrop-filter: blur(20px);
     border-radius: 16px;
     border: 2px solid transparent;
     opacity: 0;
+    overflow: hidden;
+}
+
+.timeline-content > div {
+    overflow: hidden;
 }
 
 .timeline-item.active .timeline-content {
-    max-height: 600px;
+    grid-template-rows: 1fr;
     padding: 30px;
     margin-top: 20px;
     border-color: rgba(139, 92, 246, 0.3);
