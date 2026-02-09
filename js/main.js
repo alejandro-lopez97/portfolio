@@ -122,36 +122,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const videoModal = document.getElementById('videoModal');
     const modalVideo = document.getElementById('modalVideo');
     const closeModal = document.querySelector('.video-modal-close');
+    const cancelBtn = document.querySelector('.video-modal-cancel');
 
-    if (playVideoBtn && videoModal && modalVideo && closeModal) {
+    if (playVideoBtn && videoModal && modalVideo && closeModal && cancelBtn) {
         // Open video modal
         playVideoBtn.addEventListener('click', () => {
             videoModal.classList.add('show');
             modalVideo.play();
         });
 
-        // Close video modal
-        closeModal.addEventListener('click', () => {
+        // Function to close modal
+        const closeVideoModal = () => {
             videoModal.classList.remove('show');
             modalVideo.pause();
             modalVideo.currentTime = 0;
-        });
+        };
+
+        // Close video modal with X button
+        closeModal.addEventListener('click', closeVideoModal);
+
+        // Close video modal with Cancel button
+        cancelBtn.addEventListener('click', closeVideoModal);
 
         // Close modal when clicking outside the video
         videoModal.addEventListener('click', (e) => {
             if (e.target === videoModal) {
-                videoModal.classList.remove('show');
-                modalVideo.pause();
-                modalVideo.currentTime = 0;
+                closeVideoModal();
             }
         });
 
         // Close modal with Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && videoModal.classList.contains('show')) {
-                videoModal.classList.remove('show');
-                modalVideo.pause();
-                modalVideo.currentTime = 0;
+                closeVideoModal();
             }
         });
     }
