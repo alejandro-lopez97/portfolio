@@ -824,13 +824,51 @@ html {
     height: fit-content;
 }
 
+.experience-image::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899, #f59e0b, #3b82f6);
+    background-size: 300% 300%;
+    border-radius: 50%;
+    z-index: 1;
+    animation: gradientShift 4s ease infinite;
+}
+
+.experience-image::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899, #f59e0b, #3b82f6);
+    background-size: 300% 300%;
+    border-radius: 50%;
+    z-index: 1;
+    filter: blur(20px);
+    opacity: 0.6;
+    animation: gradientShift 4s ease infinite;
+}
+
 .experience-image img {
     width: 100%;
     height: auto;
     border-radius: 50%;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
     aspect-ratio: 1 / 1;
     object-fit: cover;
+    position: relative;
+    z-index: 2;
+    display: block;
+    transition: all 0.5s ease;
+}
+
+.experience-image:hover img {
+    transform: scale(1.05) translateY(-5px);
 }
 
 .experience-timeline-vertical {
