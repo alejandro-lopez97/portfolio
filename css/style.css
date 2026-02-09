@@ -108,7 +108,7 @@ html {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
 }
 
 .nav-link {
@@ -130,7 +130,7 @@ html {
 .nav-buttons {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .nav-btn {
