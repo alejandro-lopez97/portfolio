@@ -1568,7 +1568,7 @@ ideo Modal */
 /* Floating Contact Button */
 .floating-contact-btn {
     position: fixed;
-    bottom: 100px;
+    bottom: 30px;
     right: 30px;
     width: 80px;
     height: 80px;
