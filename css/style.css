@@ -307,6 +307,136 @@ html {
     display: none;
 }
 
+.about-image {
+    display: none;
+}
+
+/* About Me Section */
+#about-me {
+    background: #2d3748;
+    position: relative;
+}
+
+.about-me-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-me-left {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.about-me-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #cbd5e0;
+    margin-bottom: 20px;
+}
+
+.about-me-text p:last-child {
+    margin-bottom: 0;
+}
+
+.education-info {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background: rgba(26, 32, 44, 0.6);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(99, 179, 237, 0.2);
+    transition: all 0.3s ease;
+}
+
+.education-info:hover {
+    border-color: #63b3ed;
+    background: rgba(99, 179, 237, 0.1);
+    transform: translateX(5px);
+}
+
+.education-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #63b3ed, #4299e1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.education-icon i {
+    font-size: 1.8rem;
+    color: #ffffff;
+}
+
+.education-details h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #f7fafc;
+    margin-bottom: 8px;
+}
+
+.education-location {
+    font-size: 1rem;
+    color: #a0aec0;
+    margin-bottom: 5px;
+}
+
+.education-period {
+    font-size: 0.95rem;
+    color: #63b3ed;
+    font-weight: 500;
+}
+
+.about-me-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me-image {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.about-me-image::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: 15px;
+    bottom: 15px;
+    border: 3px solid #63b3ed;
+    border-radius: 16px;
+    z-index: 1;
+}
+
+.about-me-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.about-me-image:hover img {
+    transform: translate(5px, 5px);
+}
+
+.about-me-image:hover::before {
+    transform: translate(-5px, -5px);
+}
+
 /* Expertise Section */
 #expertise {
     background: #1a202c;
