@@ -846,6 +846,9 @@ html {
     top: 100px;
     width: 100%;
     height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .experience-image::before {
@@ -854,7 +857,7 @@ html {
     top: -5px;
     left: -5px;
     right: -5px;
-    bottom: -5px;
+    bottom: calc(100% - 405px);
     background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899, #f59e0b, #3b82f6);
     background-size: 300% 300%;
     border-radius: 50%;
@@ -868,7 +871,7 @@ html {
     top: -5px;
     left: -5px;
     right: -5px;
-    bottom: -5px;
+    bottom: calc(100% - 405px);
     background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899, #f59e0b, #3b82f6);
     background-size: 300% 300%;
     border-radius: 50%;
@@ -1658,4 +1661,40 @@ ideo Modal */
 .footer-copyright {
     color: #94a3b8;
     font-size: 0.9rem;
+}
+
+/* Experience Stats Text */
+.experience-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.experience-stats {
+    margin-top: 40px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.experience-stats p {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    animation: fadeInUp 0.8s ease;
+    margin: 0;
+    line-height: 1.5;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
