@@ -262,6 +262,9 @@ html {
     margin-bottom: 20px;
     color: #ffffff;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+    font-style: italic;
+    letter-spacing: 2px;
 }
 
 .about-text h2 {
