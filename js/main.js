@@ -112,6 +112,28 @@ function revealOnScroll() {
 
 window.addEventListener('scroll', revealOnScroll);
 
+// Experience Timeline Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const timelineHeaders = document.querySelectorAll('.timeline-header');
+    
+    timelineHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const timelineItem = header.closest('.timeline-item');
+            const isActive = timelineItem.classList.contains('active');
+            
+            // Close all other items
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Toggle current item
+            if (!isActive) {
+                timelineItem.classList.add('active');
+            }
+        });
+    });
+});
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     // Add any initialization code here
