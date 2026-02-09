@@ -317,13 +317,18 @@ html {
     position: relative;
 }
 
+#about-me .container {
+    padding-right: 20px;
+}
+
 .about-me-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
+    padding-right: 0;
 }
 
 .about-me-left {
@@ -397,44 +402,74 @@ html {
 
 .about-me-right {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    padding-right: 0;
+    margin-right: 0;
 }
 
 .about-me-image {
     position: relative;
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
+    margin-right: 20px;
 }
 
 .about-me-image::before {
     content: '';
     position: absolute;
-    top: -15px;
-    left: -15px;
-    right: 15px;
-    bottom: 15px;
-    border: 3px solid #63b3ed;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(45deg, #63b3ed, #4299e1, #3182ce, #2c5282, #63b3ed);
+    background-size: 300% 300%;
     border-radius: 16px;
     z-index: 1;
+    animation: gradientShift 3s ease infinite;
+}
+
+.about-me-image::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(45deg, #63b3ed, #4299e1, #3182ce, #2c5282, #63b3ed);
+    background-size: 300% 300%;
+    border-radius: 16px;
+    z-index: 1;
+    filter: blur(15px);
+    opacity: 0.7;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .about-me-image img {
     width: 100%;
     height: auto;
-    border-radius: 16px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     position: relative;
     z-index: 2;
+    display: block;
     transition: all 0.3s ease;
 }
 
 .about-me-image:hover img {
-    transform: translate(5px, 5px);
-}
-
-.about-me-image:hover::before {
-    transform: translate(-5px, -5px);
+    transform: scale(1.02);
 }
 
 /* Expertise Section */
