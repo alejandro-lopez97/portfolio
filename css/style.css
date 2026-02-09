@@ -181,6 +181,11 @@ html {
     padding: 0 16px;
     font-weight: 500;
     font-size: 0.9rem;
+    gap: 8px;
+}
+
+.resume-btn i {
+    font-size: 0.9rem;
 }
 
 .resume-btn:hover {
@@ -272,7 +277,7 @@ html {
 }
 
 .about-description {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.8;
     margin-bottom: 40px;
     color: #f7fafc;
