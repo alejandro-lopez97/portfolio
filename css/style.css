@@ -827,9 +827,10 @@ html {
 .experience-image img {
     width: 100%;
     height: auto;
-    border-radius: 20px;
+    border-radius: 50%;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    border: 2px solid rgba(99, 102, 241, 0.3);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
 }
 
 .experience-timeline-vertical {
