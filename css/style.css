@@ -450,6 +450,8 @@ html {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .education-info::before {
