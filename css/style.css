@@ -1610,15 +1610,17 @@ ideo Modal */
     background: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(20px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 25px 0;
+    padding: 60px 0 30px 0;
     position: relative;
     z-index: 1;
+    min-height: 250px;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    margin-bottom: 40px;
 }
 
 .footer-logo {
@@ -1658,9 +1660,36 @@ ideo Modal */
     letter-spacing: 1px;
 }
 
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.footer-link {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+.footer-link:hover {
+    color: #63b3ed;
+    background: rgba(99, 179, 237, 0.1);
+    transform: translateX(-5px);
+}
+
 .footer-copyright {
     color: #94a3b8;
     font-size: 0.9rem;
+    text-align: center;
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Experience Stats Text */
