@@ -1600,7 +1600,7 @@ ideo Modal */
     }
 }
 
-/* Floating Contact Button */
+/* Floating Contact Buttons */
 .floating-contact-btn {
     position: fixed;
     bottom: 30px;
@@ -1618,17 +1618,52 @@ ideo Modal */
     z-index: 999;
     text-decoration: none;
     animation: gentleFloat 4s ease-in-out infinite;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .floating-contact-btn:hover {
-    transform: scale(1.05);
-    background: linear-gradient(135deg, #c0392b, #e74c3c);
+    transform: scale(1.1);
 }
 
 .floating-contact-btn i {
     color: #ffffff;
     position: relative;
     z-index: 1;
+}
+
+/* Email Button (bottom) */
+.email-btn {
+    bottom: 30px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.email-btn:hover {
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
+    box-shadow: 0 10px 35px rgba(231, 76, 60, 0.5);
+}
+
+/* Telegram Button (middle) */
+.telegram-btn {
+    bottom: 130px;
+    background: linear-gradient(135deg, #0088cc, #006699);
+    animation-delay: 0.2s;
+}
+
+.telegram-btn:hover {
+    background: linear-gradient(135deg, #006699, #0088cc);
+    box-shadow: 0 10px 35px rgba(0, 136, 204, 0.5);
+}
+
+/* WhatsApp Button (top) */
+.whatsapp-btn {
+    bottom: 230px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    animation-delay: 0.4s;
+}
+
+.whatsapp-btn:hover {
+    background: linear-gradient(135deg, #128C7E, #25D366);
+    box-shadow: 0 10px 35px rgba(37, 211, 102, 0.5);
 }
 
 @keyframes gentleFloat {
