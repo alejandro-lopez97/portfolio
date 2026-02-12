@@ -1666,11 +1666,10 @@ ideo Modal */
     box-shadow: 0 10px 35px rgba(37, 211, 102, 0.5);
 }
 
-/* Booking Calendar Button - Left Bottom */
+/* Booking Calendar Button - Right Side Above WhatsApp */
 .booking-btn {
-    left: 80px;
-    right: auto;
-    bottom: 30px;
+    right: 30px;
+    bottom: 330px;
     background: linear-gradient(135deg, #8b5cf6, #6366f1);
     animation-delay: 0.6s;
 }

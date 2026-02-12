@@ -48,18 +48,16 @@
 
     <!-- About Section -->
     <section id="about" class="section">
-        <video autoplay muted loop class="video-background">
-            <source src="assets/landing.mp4" type="video/mp4">
-        </video>
+        <img src="assets/landing.jpg" alt="Landing Background" class="video-background">
         <div class="video-overlay"></div>
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
                     <h1>Alejandro López Robles</h1>
-                    <h2>Web Architecture | Full Stack | AI Engineer</h2>
-                    <p class="about-description">
+                    <h1>Full Stack | AI Engineer</h1>
+                    <!-- <p class="about-description">
                         Hello, I’m a senior <b>Web architecture</b> and <b>Full Stack Engineer</b> with over <b>8</b> years of experience designing and building scalable, production-ready systems.
-                    </p>
+                    </p> -->
                     <div class="about-details">
                         <div class="detail-item">
                             <i class="fas fa-map-marker-alt"></i>
@@ -69,11 +67,6 @@
                             <span><a href="assets/resume.pdf" target="_blank" class="nav-btn resume-btn">
                                     <i class="fas fa-briefcase"></i> My Resume
                                 </a></span>
-                        </div>
-                        <div class="detail-item">
-                            <button id="playVideoBtn" class="nav-btn resume-btn play-btn">
-                                <i class="fas fa-play"></i> Play Video
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -430,9 +423,7 @@
             <button class="video-modal-cancel">
                 <i class="fas fa-times"></i> Cancel
             </button>
-            <video id="modalVideo" controls>
-                <source src="assets/landing.mp4" type="video/mp4">
-            </video>
+            <img id="modalVideo" src="assets/landing.jpg" alt="Landing Image">
         </div>
     </div>
 
