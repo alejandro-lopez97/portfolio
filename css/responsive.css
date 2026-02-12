@@ -198,3 +198,102 @@
         font-size: 3rem;
     }
 }
+/* Bo
+oking Button Responsive Styles */
+@media (max-width: 768px) {
+    .floating-contact-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .email-btn {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .telegram-btn {
+        bottom: 95px;
+        right: 20px;
+    }
+    
+    .whatsapp-btn {
+        bottom: 170px;
+        right: 20px;
+    }
+    
+    .booking-btn {
+        bottom: 20px;
+        left: 20px;
+        right: auto;
+    }
+    
+    .booking-modal-content {
+        padding: 35px 25px;
+        width: 95%;
+        max-width: 100%;
+    }
+    
+    .booking-modal-content h2 {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+    
+    .booking-submit-btn {
+        padding: 14px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-contact-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .email-btn {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .telegram-btn {
+        bottom: 80px;
+        right: 15px;
+    }
+    
+    .whatsapp-btn {
+        bottom: 145px;
+        right: 15px;
+    }
+    
+    .booking-btn {
+        bottom: 15px;
+        left: 15px;
+        right: auto;
+    }
+    
+    .booking-modal-content {
+        padding: 30px 20px;
+    }
+    
+    .booking-modal-content h2 {
+        font-size: 1.4rem;
+    }
+    
+    .booking-modal-close {
+        font-size: 28px;
+        top: 15px;
+        right: 20px;
+    }
+}

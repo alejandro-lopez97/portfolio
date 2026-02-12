@@ -446,6 +446,42 @@
     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=flowsgzx@gmail.com" target="_blank" class="floating-contact-btn email-btn">
         <i class="fas fa-envelope"></i>
     </a>
+    <button id="bookingBtn" class="floating-contact-btn booking-btn">
+        <i class="fas fa-calendar-alt"></i>
+    </button>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="booking-modal">
+        <div class="booking-modal-content">
+            <span class="booking-modal-close">&times;</span>
+            <h2>Book a Meeting</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="clientName">Your Name *</label>
+                    <input type="text" id="clientName" name="clientName" required>
+                </div>
+                <div class="form-group">
+                    <label for="clientEmail">Your Email *</label>
+                    <input type="email" id="clientEmail" name="clientEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="meetingDate">Select Date *</label>
+                    <input type="date" id="meetingDate" name="meetingDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="meetingTime">Select Time *</label>
+                    <input type="time" id="meetingTime" name="meetingTime" required>
+                </div>
+                <div class="form-group">
+                    <label for="meetingNotes">Additional Notes</label>
+                    <textarea id="meetingNotes" name="meetingNotes" rows="4" placeholder="Tell me what you'd like to discuss..."></textarea>
+                </div>
+                <button type="submit" class="booking-submit-btn">
+                    <i class="fas fa-paper-plane"></i> Book Meeting
+                </button>
+            </form>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">

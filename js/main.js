@@ -181,3 +181,93 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Booking Modal Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const bookingBtn = document.getElementById('bookingBtn');
+    const bookingModal = document.getElementById('bookingModal');
+    const bookingClose = document.querySelector('.booking-modal-close');
+    const bookingForm = document.getElementById('bookingForm');
+
+    if (bookingBtn && bookingModal && bookingClose && bookingForm) {
+        // Open booking modal
+        bookingBtn.addEventListener('click', () => {
+            bookingModal.classList.add('show');
+        });
+
+        // Close booking modal
+        const closeBookingModal = () => {
+            bookingModal.classList.remove('show');
+            bookingForm.reset();
+        };
+
+        bookingClose.addEventListener('click', closeBookingModal);
+
+        // Close modal when clicking outside
+        bookingModal.addEventListener('click', (e) => {
+            if (e.target === bookingModal) {
+                closeBookingModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && bookingModal.classList.contains('show')) {
+                closeBookingModal();
+            }
+        });
+
+        // Set minimum date to today
+        const meetingDateInput = document.getElementById('meetingDate');
+        if (meetingDateInput) {
+            const today = new Date().toISOString().split('T')[0];
+            meetingDateInput.setAttribute('min', today);
+        }
+
+        // Handle form submission
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Get form data
+            const formData = {
+                name: document.getElementById('clientName').value,
+                email: document.getElementById('clientEmail').value,
+                date: document.getElementById('meetingDate').value,
+                time: document.getElementById('meetingTime').value,
+                notes: document.getElementById('meetingNotes').value
+            };
+
+            // Format the date
+            const dateObj = new Date(formData.date);
+            const formattedDate = dateObj.toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+
+            // Create email body
+            const emailSubject = encodeURIComponent(`Meeting Request from ${formData.name}`);
+            const emailBody = encodeURIComponent(
+                `New Meeting Request\n\n` +
+                `Name: ${formData.name}\n` +
+                `Email: ${formData.email}\n` +
+                `Date: ${formattedDate}\n` +
+                `Time: ${formData.time}\n\n` +
+                `Additional Notes:\n${formData.notes || 'No additional notes'}\n\n` +
+                `---\n` +
+                `This meeting request was submitted through your portfolio website.`
+            );
+
+            // Open Gmail compose with pre-filled data
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=flowsgzx@gmail.com&su=${emailSubject}&body=${emailBody}`;
+            window.open(gmailUrl, '_blank');
+
+            // Show success message
+            alert('Opening Gmail to send your meeting request. Please click "Send" in the new window.');
+
+            // Close modal and reset form
+            closeBookingModal();
+        });
+    }
+});
