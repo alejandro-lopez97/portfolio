@@ -457,11 +457,58 @@
                 </div>
                 <div class="form-group">
                     <label for="meetingDate">Select Date *</label>
-                    <input type="date" id="meetingDate" name="meetingDate" required>
+                    <div class="custom-date-picker">
+                        <input type="text" id="meetingDate" name="meetingDate" placeholder="mm/dd/yyyy" readonly required>
+                        <i class="fas fa-calendar-alt"></i>
+                        <div class="calendar-dropdown">
+                            <div class="calendar-header">
+                                <button type="button" class="calendar-nav" id="prevMonth">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <span class="calendar-month-year"></span>
+                                <button type="button" class="calendar-nav" id="nextMonth">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="calendar-weekdays">
+                                <span>Sun</span>
+                                <span>Mon</span>
+                                <span>Tue</span>
+                                <span>Wed</span>
+                                <span>Thu</span>
+                                <span>Fri</span>
+                                <span>Sat</span>
+                            </div>
+                            <div class="calendar-days"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="meetingTime">Select Time *</label>
-                    <input type="time" id="meetingTime" name="meetingTime" required>
+                    <div class="custom-time-picker">
+                        <input type="text" id="meetingTime" name="meetingTime" placeholder="--:-- --" readonly required>
+                        <i class="fas fa-clock"></i>
+                        <div class="time-dropdown">
+                            <div class="time-selector">
+                                <div class="time-column">
+                                    <label>Hour</label>
+                                    <div class="time-scroll" id="hourScroll"></div>
+                                </div>
+                                <div class="time-separator">:</div>
+                                <div class="time-column">
+                                    <label>Minute</label>
+                                    <div class="time-scroll" id="minuteScroll"></div>
+                                </div>
+                                <div class="time-column">
+                                    <label>Period</label>
+                                    <div class="time-scroll" id="periodScroll">
+                                        <div class="time-option" data-value="AM">AM</div>
+                                        <div class="time-option" data-value="PM">PM</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="meetingNotes">Additional Notes</label>

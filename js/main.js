@@ -199,6 +199,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const closeBookingModal = () => {
             bookingModal.classList.remove('show');
             bookingForm.reset();
+            // Reset custom pickers
+            document.getElementById('meetingDate').value = '';
+            document.getElementById('meetingTime').value = '';
+            document.querySelector('.calendar-dropdown').classList.remove('show');
+            document.querySelector('.time-dropdown').classList.remove('show');
         };
 
         bookingClose.addEventListener('click', closeBookingModal);
@@ -217,12 +222,194 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Set minimum date to today
-        const meetingDateInput = document.getElementById('meetingDate');
-        if (meetingDateInput) {
-            const today = new Date().toISOString().split('T')[0];
-            meetingDateInput.setAttribute('min', today);
+        // Custom Date Picker
+        const dateInput = document.getElementById('meetingDate');
+        const calendarDropdown = document.querySelector('.calendar-dropdown');
+        const calendarDays = document.querySelector('.calendar-days');
+        const monthYearDisplay = document.querySelector('.calendar-month-year');
+        const prevMonthBtn = document.getElementById('prevMonth');
+        const nextMonthBtn = document.getElementById('nextMonth');
+
+        let currentDate = new Date();
+        let selectedDate = null;
+
+        dateInput.addEventListener('click', (e) => {
+            e.stopPropagation();
+            calendarDropdown.classList.toggle('show');
+            document.querySelector('.time-dropdown').classList.remove('show');
+        });
+
+        function renderCalendar(date) {
+            const year = date.getFullYear();
+            const month = date.getMonth();
+            
+            // Set month/year display
+            const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+                              'July', 'August', 'September', 'October', 'November', 'December'];
+            monthYearDisplay.textContent = `${monthNames[month]} ${year}`;
+
+            // Get first day of month and number of days
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const daysInPrevMonth = new Date(year, month, 0).getDate();
+
+            // Clear calendar
+            calendarDays.innerHTML = '';
+
+            // Get today's date for comparison
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            // Add previous month's days
+            for (let i = firstDay - 1; i >= 0; i--) {
+                const day = daysInPrevMonth - i;
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-day other-month';
+                dayElement.textContent = day;
+                calendarDays.appendChild(dayElement);
+            }
+
+            // Add current month's days
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-day';
+                dayElement.textContent = day;
+
+                const dayDate = new Date(year, month, day);
+                dayDate.setHours(0, 0, 0, 0);
+
+                // Disable past dates
+                if (dayDate < today) {
+                    dayElement.classList.add('disabled');
+                }
+
+                // Mark today
+                if (dayDate.getTime() === today.getTime()) {
+                    dayElement.classList.add('today');
+                }
+
+                // Mark selected date
+                if (selectedDate && dayDate.getTime() === selectedDate.getTime()) {
+                    dayElement.classList.add('selected');
+                }
+
+                // Add click handler
+                if (dayDate >= today) {
+                    dayElement.addEventListener('click', () => {
+                        selectedDate = dayDate;
+                        const formattedDate = `${String(month + 1).padStart(2, '0')}/${String(day).padStart(2, '0')}/${year}`;
+                        dateInput.value = formattedDate;
+                        calendarDropdown.classList.remove('show');
+                        renderCalendar(currentDate);
+                    });
+                }
+
+                calendarDays.appendChild(dayElement);
+            }
+
+            // Add next month's days to fill grid
+            const totalCells = calendarDays.children.length;
+            const remainingCells = 42 - totalCells; // 6 rows * 7 days
+            for (let day = 1; day <= remainingCells; day++) {
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-day other-month';
+                dayElement.textContent = day;
+                calendarDays.appendChild(dayElement);
+            }
         }
+
+        prevMonthBtn.addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar(currentDate);
+        });
+
+        nextMonthBtn.addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar(currentDate);
+        });
+
+        // Initialize calendar
+        renderCalendar(currentDate);
+
+        // Custom Time Picker
+        const timeInput = document.getElementById('meetingTime');
+        const timeDropdown = document.querySelector('.time-dropdown');
+        const hourScroll = document.getElementById('hourScroll');
+        const minuteScroll = document.getElementById('minuteScroll');
+        const periodScroll = document.getElementById('periodScroll');
+
+        let selectedHour = null;
+        let selectedMinute = null;
+        let selectedPeriod = null;
+
+        timeInput.addEventListener('click', (e) => {
+            e.stopPropagation();
+            timeDropdown.classList.toggle('show');
+            calendarDropdown.classList.remove('show');
+        });
+
+        // Generate hours (1-12)
+        for (let i = 1; i <= 12; i++) {
+            const hourOption = document.createElement('div');
+            hourOption.className = 'time-option';
+            hourOption.textContent = String(i).padStart(2, '0');
+            hourOption.dataset.value = i;
+            hourOption.addEventListener('click', () => {
+                selectedHour = i;
+                updateTimeDisplay();
+                document.querySelectorAll('#hourScroll .time-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                hourOption.classList.add('selected');
+            });
+            hourScroll.appendChild(hourOption);
+        }
+
+        // Generate minutes (00, 15, 30, 45)
+        for (let i = 0; i < 60; i += 15) {
+            const minuteOption = document.createElement('div');
+            minuteOption.className = 'time-option';
+            minuteOption.textContent = String(i).padStart(2, '0');
+            minuteOption.dataset.value = i;
+            minuteOption.addEventListener('click', () => {
+                selectedMinute = i;
+                updateTimeDisplay();
+                document.querySelectorAll('#minuteScroll .time-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                minuteOption.classList.add('selected');
+            });
+            minuteScroll.appendChild(minuteOption);
+        }
+
+        // Period selection (AM/PM)
+        document.querySelectorAll('#periodScroll .time-option').forEach(option => {
+            option.addEventListener('click', () => {
+                selectedPeriod = option.dataset.value;
+                updateTimeDisplay();
+                document.querySelectorAll('#periodScroll .time-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                option.classList.add('selected');
+            });
+        });
+
+        function updateTimeDisplay() {
+            if (selectedHour !== null && selectedMinute !== null && selectedPeriod !== null) {
+                const timeString = `${String(selectedHour).padStart(2, '0')}:${String(selectedMinute).padStart(2, '0')} ${selectedPeriod}`;
+                timeInput.value = timeString;
+            }
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.custom-date-picker')) {
+                calendarDropdown.classList.remove('show');
+            }
+            if (!e.target.closest('.custom-time-picker')) {
+                timeDropdown.classList.remove('show');
+            }
+        });
 
         // Handle form submission
         bookingForm.addEventListener('submit', (e) => {
@@ -237,22 +424,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 notes: document.getElementById('meetingNotes').value
             };
 
-            // Format the date
-            const dateObj = new Date(formData.date);
-            const formattedDate = dateObj.toLocaleDateString('en-US', { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-            });
-
             // Create email body
             const emailSubject = encodeURIComponent(`Meeting Request from ${formData.name}`);
             const emailBody = encodeURIComponent(
                 `New Meeting Request\n\n` +
                 `Name: ${formData.name}\n` +
                 `Email: ${formData.email}\n` +
-                `Date: ${formattedDate}\n` +
+                `Date: ${formData.date}\n` +
                 `Time: ${formData.time}\n\n` +
                 `Additional Notes:\n${formData.notes || 'No additional notes'}\n\n` +
                 `---\n` +

@@ -1978,3 +1978,274 @@ ideo Modal */
 .booking-submit-btn i {
     font-size: 1rem;
 }
+
+/* Custom Date Picker */
+.custom-date-picker {
+    position: relative;
+}
+
+.custom-date-picker input {
+    cursor: pointer;
+    padding-right: 45px;
+}
+
+.custom-date-picker > i {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8b5cf6;
+    font-size: 1.1rem;
+    pointer-events: none;
+}
+
+.calendar-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.98);
+    border: 2px solid rgba(139, 92, 246, 0.4);
+    border-radius: 16px;
+    padding: 20px;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(20px);
+}
+
+.calendar-dropdown.show {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-month-year {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.calendar-nav {
+    background: rgba(139, 92, 246, 0.2);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    color: #8b5cf6;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-nav:hover {
+    background: #8b5cf6;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.calendar-weekdays span {
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #8b5cf6;
+    padding: 8px 0;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #cbd5e0;
+    transition: all 0.3s ease;
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid transparent;
+}
+
+.calendar-day:hover:not(.disabled):not(.other-month) {
+    background: rgba(139, 92, 246, 0.3);
+    border-color: #8b5cf6;
+    transform: scale(1.1);
+}
+
+.calendar-day.selected {
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    color: #ffffff;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.5);
+}
+
+.calendar-day.today {
+    border: 2px solid #8b5cf6;
+    font-weight: 700;
+}
+
+.calendar-day.disabled {
+    color: #4a5568;
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+.calendar-day.other-month {
+    color: #4a5568;
+    opacity: 0.3;
+}
+
+/* Custom Time Picker */
+.custom-time-picker {
+    position: relative;
+}
+
+.custom-time-picker input {
+    cursor: pointer;
+    padding-right: 45px;
+}
+
+.custom-time-picker > i {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8b5cf6;
+    font-size: 1.1rem;
+    pointer-events: none;
+}
+
+.time-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.98);
+    border: 2px solid rgba(139, 92, 246, 0.4);
+    border-radius: 16px;
+    padding: 20px;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(20px);
+}
+
+.time-dropdown.show {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+.time-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.time-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.time-column label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #8b5cf6;
+    margin: 0;
+}
+
+.time-scroll {
+    height: 180px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+    background: rgba(30, 41, 59, 0.4);
+    border-radius: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #8b5cf6 rgba(30, 41, 59, 0.4);
+}
+
+.time-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.time-scroll::-webkit-scrollbar-track {
+    background: rgba(30, 41, 59, 0.4);
+    border-radius: 10px;
+}
+
+.time-scroll::-webkit-scrollbar-thumb {
+    background: #8b5cf6;
+    border-radius: 10px;
+}
+
+.time-option {
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #cbd5e0;
+    transition: all 0.3s ease;
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid transparent;
+    min-width: 60px;
+}
+
+.time-option:hover {
+    background: rgba(139, 92, 246, 0.3);
+    border-color: #8b5cf6;
+    transform: scale(1.05);
+}
+
+.time-option.selected {
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    color: #ffffff;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.5);
+}
+
+.time-separator {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #8b5cf6;
+    margin-top: 30px;
+}
