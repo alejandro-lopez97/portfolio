@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
             );
 
             // Open Gmail compose with pre-filled data
-            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=flowsgzx@gmail.com&su=${emailSubject}&body=${emailBody}`;
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=flowsgx@gmail.com&su=${emailSubject}&body=${emailBody}`;
             window.open(gmailUrl, '_blank');
 
             // Show success message
