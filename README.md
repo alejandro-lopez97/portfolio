@@ -363,7 +363,7 @@ This project is open source and available for personal and commercial use.
 ## 👤 Author
 
 **Alejandro López Robles**
-- Email: flowsgx@gmail.com
+- Email: flowsgzx@gmail.com
 - LinkedIn: [linkedin.com/in/alejandro-lopez](https://linkedin.com/in/alejandro-lopez)
 - GitHub: [github.com/alejandro-lopez97](https://github.com/alejandro-lopez97)
 
